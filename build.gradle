@@ -1,0 +1,32 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'idea'
+apply plugin: 'eclipse-wtp'
+
+group = 'es.unizar.tmdad'
+version = '2018'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-config-server:1.4.3.RELEASE"
+    compile('org.springframework.boot:spring-boot-starter')
+
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
